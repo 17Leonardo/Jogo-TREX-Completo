@@ -170,7 +170,7 @@ function gerarNuvens() {
     nuvem.velocityX = -3;
     nuvem.depth = trex.depth;
     trex.depth = trex.depth + 1;
-    nuvem.lifetime = 220;
+    nuvem.lifetime = windowWidth/3+30;
     grupoNuvens.add(nuvem);
   }
 }
@@ -207,7 +207,7 @@ function gerarCactos() {
     }
     //atribuir escala e tempo de vida aos obstáculos
     cacto.scale = 0.7;
-    cacto.lifetime = 110;
+    cacto.lifetime = windowWidth/6+30;
 
     reiniciar.depth = cacto.depth+1;
     gameOver.depth = cacto.depth+1;
