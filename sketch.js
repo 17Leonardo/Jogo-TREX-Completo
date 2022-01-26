@@ -97,9 +97,10 @@ function draw() {
     }
 
     //pulo
-    if (keyDown("space") && trex.y > windowHeight-100) {
+    if (keyDown("space") && trex.y > windowHeight-100 || touches.length > 0 && trex.y > windowHeight-100) {
       trex.velocityY = -25;
       somPulo.play();
+      touches = [];
     }
 
     //gravidade
@@ -150,9 +151,10 @@ function draw() {
     gameOver.visible = true;
     reiniciar.visible = true;
 
-    if (mousePressedOver(reiniciar)){
+    if (mousePressedOver(reiniciar) || touches.length > 0){
       console.log("reiniciar");
       reinicie();
+      touches = [];
      }
   }
 }
